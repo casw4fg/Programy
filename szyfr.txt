@@ -1,0 +1,28 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+string SzyfrRomualda(string s) {
+    string szyfrogram;
+    for(int i=0; i<s.size()-1;i++) {
+             swap(s[i],s[i++]);
+    }
+ return s;
+}
+
+
+
+ int main() {
+        string s;
+        ifstream wejscie("teksst2D.txt");
+        ofstream wyjscie("szyfrogram.txt");
+         while(!wejscie.eof())
+        {
+             getline(wejscie,s);
+             wyjscie<<SzyfrRomualda(s)<<endl;
+             cout<<SzyfrRomualda(s);
+        }
+        return 0;
+ }

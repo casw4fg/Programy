@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+struct uczen{
+string nazwisko;
+string imie;
+int nr_w_dzienniku;
+float srednia;
+bool czy_dyslekcja;
+};
+
+int main() {
+
+uczen a;
+
+cin >> a.nazwisko >> a.imie >> a.nr_w_dzienniku;
+cin >> a.srednia >> a.czy_dyslekcja;
+
+}

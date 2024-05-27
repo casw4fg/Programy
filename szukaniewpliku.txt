@@ -1,0 +1,78 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+int liczenieX(string s) {
+    int liczbax=0;
+    for(int i=0;i<s.size();i++) {
+        if (s[i]=='X'){
+            liczbax++;
+
+        }
+    }
+    return liczbax;
+}
+
+
+
+int sekwencjatxt(string s) {
+        int liczbasekwencji=0;
+        for (int i=0;i<s.size();i++) {
+            if (s[i]=='T' && s[i+1]=='X' && s[i+2]=='T'){
+                    liczbasekwencji++;
+            }
+        }
+    if(liczbasekwencji> 0){
+    }
+    return liczbasekwencji;
+
+}
+
+int najkrotszeslowo(string s) {
+    int wielkosc;
+    wielkosc=s.size();
+    cout<<"W wierszu: "<<wielkosc<<endl;
+    return wielkosc;
+}
+
+
+ int main() {
+        int minimum=0, maksimum=0, najkrotsze_slowo=0;
+        string  idx_najkrotsze_slowo;
+        ifstream wejscie("sygnaly.txt");
+        ofstream wyjscie("najkrotszeslowo.txt");
+        string s;
+        int wszystkie_iksy_w_pliku = 0, iloscsekwencji=0;
+        int wiersz = 0;
+          while(!wejscie.eof())
+        {
+            getline(wejscie,s);
+            najkrotsze_slowo=najkrotszeslowo(s);
+
+            if(wiersz==0) {
+                minimum=najkrotsze_slowo;
+                maksimum=najkrotsze_slowo;
+                idx_najkrotsze_slowo = s;
+            } else {
+                maksimum = najkrotsze_slowo;
+              if(maksimum<minimum) {
+                idx_najkrotsze_slowo = s;
+                minimum=maksimum;
+              }
+
+            }
+            wszystkie_iksy_w_pliku += liczenieX(s);
+            iloscsekwencji += sekwencjatxt(s);
+            najkrotszeslowo(s);
+            wiersz++;
+
+        }
+        wejscie.close();
+        wyjscie<<idx_najkrotsze_slowo;
+        wyjscie.close();
+        cout<<"Ilosc x: "<<wszystkie_iksy_w_pliku<<endl;
+        cout<<"Ilosc TXT: "<<iloscsekwencji<<endl;
+        cout<<"Najkrotsze slowo: "<< idx_najkrotsze_slowo <<endl;
+        return 0;
+ }
