@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+int n;
+int suma = 0;
+cin >> n;
+int liczba_org = n;
+if (n>0 && n<1000){
+while (liczba_org>0){
+    int ostatnia = liczba_org%10;
+    suma+= ostatnia;
+    liczba_org = liczba_org/10;
+}
+    cout << suma <<endl;
+    }else{
+        cout << "Niepoprawna liczba" << endl;
+    }
+
+
+}
