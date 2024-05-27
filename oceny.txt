@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int rozmiar_tab = 6;
+    int oceny[rozmiar_tab] = {0};
+    int n, ocena;
+
+    cin >> n;
+    for (int i=0; i<n;++i) {
+        cin>>ocena;
+        ++oceny[ocena -1];
+    }
+
+    for (int i=0; i<rozmiar_tab; ++i) {
+        cout<<oceny[i]<<" ";
+    }
+    return 0;
+}
