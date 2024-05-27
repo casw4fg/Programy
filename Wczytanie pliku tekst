@@ -1,0 +1,19 @@
+#include <iostream>
+#include <fstream> // Import biblioteki fstream
+
+using namespace std;
+
+int main() {
+    fstream uchwyt; // Obiekt typu fstream (uchwyt do pliku)
+    uchwyt.open("sygnaly.txt"); // Otwieramy plik o nazwie "plik_tekst"
+
+    string linia;
+    while (getline(uchwyt, linia)) { // Pobierz linijkę z pliku i wykonuj, dopóki są dane
+        cout << linia << endl; // Wypisz na ekranie
+    }
+
+    uchwyt.close(); // Zamykamy plik
+
+
+    }
+
