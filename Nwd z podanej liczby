@@ -1,13 +1,14 @@
 #include <iostream>
 using namespace std;
+
 int main() {
     int n;
     cin >> n;
-    std::cout << "Dzielniki liczby " << n << " to:" << std::endl;
+    cout << "Dzielniki liczby " << n << " to:" << endl;
     
     for (int i = 1; i <= n; ++i) {
         if (n % i == 0) {
-            std::cout << i << std::endl;
+            cout << i << endl;
         }
     }
 
